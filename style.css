@@ -1,3 +1,33 @@
-body {
-  border: solid red 2pt;
+.wrapper {
+  display: grid;
+  grid-template-columns: [left-margin] 40px [main] 12fr [right-margin] 40px;
+  border: dotted blue;
+}
+
+.main {
+  display: grid;
+  grid-column: main;
+  grid-row-gap: 10px;
+  grid-template-rows: [top-margin] 20px [header] 40px [body] auto [bottom-margin] 20px;
+  border: dotted red;
+}
+
+.content {
+  grid-row: body;
+  border: dotted rgb(201, 34, 62);
+}
+.header {
+  grid-row: header;
+  border: dotted orange;
+}
+
+.post {
+  margin-left: 20px;
+  margin-right: 20px;
+  border-top: solid gray;
+  background: rgb(185, 177, 177);
+}
+
+.post .title {
+  text-align: center;
 }
