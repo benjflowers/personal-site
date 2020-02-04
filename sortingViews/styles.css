@@ -5,4 +5,5 @@ div#stacks {
   grid-template-rows: auto;
   grid-auto-flow: row;
   align-items: end;
+  margin-left: 300px;
 }
