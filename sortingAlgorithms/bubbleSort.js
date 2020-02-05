@@ -1,7 +1,7 @@
 console.log('begin work to bubble sort data');
 
-const stackCount = 5;
-const stackRange = 1000;
+const stackCount = 130;
+const stackRange = 500;
 const stackArray = Array(stackCount);
 const stacksWrapper = document.querySelector('#stacks');
 const stackButton = document.querySelector('#generateStacks');
@@ -19,10 +19,13 @@ sortStackButton.addEventListener('click', () => {
   }
 })
 
-function generateStacks() {
+function generateStacks(arg) {
   stacksWrapper.innerHTML = "";
 
-  setStackArray(stackArray, stackCount, stackRange);
+  if(arg != 'sorted') {
+    setStackArray(stackArray, stackCount, stackRange);
+  }
+
   for(let i = 0; i < stackCount; i++) {
     let stackDiv = document.createElement('div');
 
@@ -57,22 +60,17 @@ function setStackArray(array, count, range) {
 }
 
 function sortStack(array) {
-  //bubble sort: Check the adjacent element of each current index. Swap if deficit
-  // Example: 1, 6, 4, 2 - Check 6 against 1, one is lower, stays, check 4 to 6, 4 is lower, switch
-  console.log(array);
+  let len = array.length;
 
-  for(let i = 0; i < array.length; i++) {
-    // First iteration
-    if(i == 0) {
-      let rightNeb = array[i + 1];
-
-      if ( rightNeb < array[i]) {
-        let removed = array.splice(i, 1, rightNeb);
-        array.splice(i + 1, 1, removed[0]);
+  for(let i = 0; i < len; i++) {
+    for(let j = 0; j < len - 1; j++){
+      if(array[j] > array[j + 1]) {
+        let temp = array[j];
+        array[j] = array [j + 1];
+        array[j + 1] = temp;
       }
     }
   }
 
-  console.log(array);
-
+  generateStacks('sorted');
 }
