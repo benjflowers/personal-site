@@ -7,6 +7,8 @@ div.wrapper {
   grid-column-gap: 2rem;
   grid-row-gap: 1rem;
   grid-template-columns: [left-gutter] 1fr [main] 12fr [right-gutter] 1fr;
+
+  margin: 0;
 }
 
 div.main {
@@ -21,8 +23,26 @@ div.intro {
 
 header {
   grid-row: header;
+  background: pink;
+  color: white;
+
+  margin: 0;
+  padding-left: .5rem;
+
+  height: auto;
 }
 
 main {
   grid-row: content;
+}
+
+p.date {
+  color: gray;
+  font-style: italic;
+  font-size: 1vh;
+  margin-top: 0;
+}
+
+h4.title {
+  margin-bottom: 5px;
 }
