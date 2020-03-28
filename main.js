@@ -14,7 +14,7 @@ var count = 0;
 canvas.addEventListener('click', e => {
   let chance = Math.random();
 
-  if(count > 10) {
+  if(count >= 10) {
     context.clearRect(0, 0, canvas.width, canvas.height);
     count = 0;
   }
