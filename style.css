@@ -14,7 +14,7 @@ div.wrapper {
 div.main {
   grid-column: main;
   display: grid;
-  grid-template-rows: [header] 5vh [intro] 1fr [content] 2fr [footer] 5vh
+  grid-template-rows: [header] 5vh [intro] 50px [content] 2fr [footer] 5vh
 }
 
 div.intro {
