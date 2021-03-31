@@ -27,7 +27,7 @@ export default {
   methods: {
     async getPosts() {
       await axios
-        .get("http://localhost:1337/posts")
+        .get("https://blog-cms-v1.herokuapp.com/posts")
         .then((resp) => {
           for (let i = 0; i < resp.data.length; i++) {
             this.posts.push(resp.data[i]);
