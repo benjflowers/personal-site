@@ -16,6 +16,7 @@ export default {
   data() {
     return {
       posts: [],
+      cms_base_uri: process.env.VUE_APP_CMS_BASE_URI,
     };
   },
   created() {
@@ -27,7 +28,7 @@ export default {
   methods: {
     async getPosts() {
       await axios
-        .get("https://blog-cms-v1.herokuapp.com/posts")
+        .get(`${this.cms_base_uri}/posts`)
         .then((resp) => {
           for (let i = 0; i < resp.data.length; i++) {
             this.posts.push(resp.data[i]);

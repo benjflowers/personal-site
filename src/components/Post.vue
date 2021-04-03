@@ -5,9 +5,9 @@
     <div class="content" v-html="compiledMarkdown"></div>
     <hr />
     <p class="author">{{ post.author }}</p>
-    <span class="category">{{
-      post.category || "lonely and uncategorized"
-    }}</span>
+    <div :key="category" class="categories" v-for="category in categories">
+      <span class="category">{{ category || "lonely and uncategorized" }}</span>
+    </div>
   </div>
 </template>
 
@@ -19,6 +19,16 @@ export default {
   props: {
     post: Object,
     content: String,
+  },
+  data() {
+    return {
+      categories: [],
+    };
+  },
+  created() {
+    this.post.categories
+      .split(",")
+      .map((category) => this.categories.push(category));
   },
   computed: {
     compiledMarkdown() {
